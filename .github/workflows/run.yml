@@ -18,6 +18,7 @@ jobs:
           dpkg-deb -X ${{ github.workspace }}/app.deb ${{ github.workspace }}/app
 
           mkdir -p ${{ github.workspace }}/ipa/Payload
+          ls -al ${{ github.workspace }}/app/Applications/
           cp -R ${{ github.workspace }}/app/Applications/* ${{ github.workspace }}/ipa/Payload
           
           cd ${{ github.workspace }}/ipa
