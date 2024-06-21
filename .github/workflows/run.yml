@@ -13,8 +13,7 @@ jobs:
 
     steps:
       - name: Convert deb to IPA
-      - uses: actions/checkout@v2
-      - run: |
+        run: |
           curl -L -o ${{ github.workspace }}/app.deb "${{ github.event.inputs.deb }}"
           dpkg-deb -X ${{ github.workspace }}/app.deb ${{ github.workspace }}/app
 
